@@ -1,0 +1,104 @@
+/* Este es el contenedor principal que ocupará toda la pantalla */
+.game-layout-container {
+  width: 100vw;
+  height: 100vh;
+  /* 1. Color de base muy oscuro, casi negro */
+  background-color: #010803; 
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif; /* O la fuente que elijas */
+  color: #c4f9da; /* Color de texto base verde muy pálido */
+}
+
+/* 2. La Rejilla Cybernetic (Grid) */
+.game-layout-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Usamos gradientes lineales muy finos para crear las líneas horizontales y verticales */
+  background-image: 
+    linear-gradient(#051a0b 1px, transparent 1px),
+    linear-gradient(90deg, #051a0b 1px, transparent 1px);
+  
+  /* Definimos el tamaño de cada cuadrado de la rejilla (25px por 25px) */
+  background-size: 25px 25px;
+  
+  /* Bajamos la opacidad para que sea sutil */
+  opacity: 0.6; 
+  z-index: 1; /* Detrás del texto pero delante del color base */
+}
+
+/* 3. Las Luces Difusas (Orbes) */
+.background-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Justo debajo del texto */
+  pointer-events: none; /* No interfieren con los clics */
+}
+
+/* Base para cada orbe usando gradientes radiales */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px); /* Un desenfoque para dar efecto de luz difusa */
+  opacity: 0.2; /* Muy sutiles */
+}
+
+/* Definimos la posición y color de cada orbe según la imagen */
+.orb-top-right {
+  top: 10%;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #e9b33e 0%, rgba(233, 179, 62, 0) 70%); /* Naranja */
+}
+
+.orb-bottom-left {
+  bottom: 10%;
+  left: 10%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #7e4a36 0%, rgba(126, 74, 54, 0) 70%); /* Marrón/Cobre */
+}
+
+.orb-bottom-right {
+  bottom: 5%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #0aff56 0%, rgba(10, 255, 86, 0) 70%); /* Verde brillante */
+}
+
+/* 4. Estilos para el texto de la cabecera (Header) */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: relative;
+  z-index: 10; /* Siempre encima de todo */
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #14e66c;
+  border-radius: 50%;
+  /* Glow sutil para el icono */
+  box-shadow: 0 0 5px #14e66c; 
+}
