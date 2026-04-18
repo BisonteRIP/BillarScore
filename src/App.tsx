@@ -1,7 +1,6 @@
 import "./App.css";
-import MainMenu from './pages/MainMenu'
+import MainMenu from "@/pages/MainMenu";
 function App() {
-
   return (
     <>
       <div>
