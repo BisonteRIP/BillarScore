@@ -1,5 +1,5 @@
 import "./MainMenu.css";
-import { Plus } from "lucide-react";
+import { Plus, Trophy} from "lucide-react";
 
 const MainMenu = () => {
   return (
@@ -19,11 +19,11 @@ const MainMenu = () => {
             <span>BILLAR 3 BANDAS</span>
           </div>
           <div className="text-right">
-            <span>v1.0 · 2026</span>
+            <span className="text-[#524f37]">v1.0 · 2026</span>
           </div>
         </header>
 
-        {/* AQUÍ IRÍA EL RESTO DEL MENÚ (TÍTULO Y BOTONES) */}
+        {/* RESTO DEL MENÚ (TÍTULO Y BOTONES) */}
         <main className="flex items-center justify-center flex-col text-center mt-24 text-[#0fa54d] font-orbitron">
           <p className="uppercase text-xl tracking-[0.4em]">
             Sistema de gestión
@@ -39,6 +39,16 @@ const MainMenu = () => {
             Nuevo torneo
           </button>
         </main>
+      </div>
+      <div>
+        <div className="flex items-center flex-col py-12 relative z-20 gap-8">
+          <div className="rounded-full bg-[#09502770] border border-[#0a6831a6] p-5">
+            <Trophy size={24} color="#0a6831a6" />
+          </div>
+          <p className="text-[#524f37]">
+            Aún no hay torneos. Crea el primero con el botón de arriba.
+          </p>
+        </div>
       </div>
     </div>
   );
