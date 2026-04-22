@@ -1,13 +1,10 @@
-import { useState } from "react";
 import "./App.css";
-
+import MainMenu from "@/pages/MainMenu";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
-        <h1 className="">Hola mundo</h1>
+        <MainMenu />
       </div>
     </>
   );
