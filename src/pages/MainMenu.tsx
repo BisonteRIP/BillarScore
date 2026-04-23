@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./MainMenu.css";
 import { Plus, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,15 @@ import {
 } from "@/components/ui/dialog";
 
 const MainMenu = () => {
+  const navigate = useNavigate();
+
+  const manejarCrearTorneo = () => {
+    //futuro guardado de datos
+    console.log("Guardando datos del torneo...")
+
+    navigate("/juego")
+  }
+
   return (
     <div className="game-layout-container">
       {/* CAPA VISUAL DE FONDO (LAS LUCES) */}
@@ -80,7 +90,7 @@ const MainMenu = () => {
                     Cerrar
                   </Button>
                 </DialogClose>
-                <Button className="flex-1 bg-[#19ab4f5b] text-white cursor-pointer hover:bg-[#19ab4f] p-4 h-10">
+                <Button onClick={manejarCrearTorneo} className="flex-1 bg-[#19ab4f5b] text-white cursor-pointer hover:bg-[#19ab4f] p-4 h-10">
                   Crear & Abrir
                 </Button>
               </DialogFooter>
