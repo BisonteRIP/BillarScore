@@ -2,13 +2,13 @@
 .game-layout-container {
   width: 100vw;
   height: 100vh;
-  background-color: #010803;
+  /* 1. Color de base muy oscuro, casi negro */
+  background-color: var(--menu-page-bg);
   position: relative;
   overflow: hidden;
-  font-family: "Montserrat", sans-serif; 
-  color: #c4f9da;
+  font-family: "Montserrat", sans-serif; /* O la fuente que elijas */
+  color: var(--menu-page-text); /* Color de texto base verde muy pálido */
 }
-
 
 .game-layout-container::after {
   content: "";
@@ -17,10 +17,13 @@
   left: 0;
   width: 100%;
   height: 100%;
+
   background-image:
-    linear-gradient(#051a0b 1px, transparent 1px),
-    linear-gradient(90deg, #051a0b 1px, transparent 1px);
+    linear-gradient(var(--menu-grid-lines) 1px, transparent 1px),
+    linear-gradient(90deg, var(--menu-grid-lines) 1px, transparent 1px);
+
   background-size: 50px 50px;
+
   opacity: 0.6;
   z-index: 1; 
 }
@@ -33,7 +36,7 @@
   width: 100%;
   height: 100%;
   z-index: 2; 
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 /* Base para cada orbe usando gradientes radiales */
@@ -52,7 +55,7 @@
   height: 120px;
   background: radial-gradient(
     circle,
-    #e9b33e 0%,
+    var(--menu-orb-gold) 0%,
     rgba(233, 179, 62, 0) 70%
   ); /* Naranja */
 }
@@ -64,7 +67,7 @@
   height: 150px;
   background: radial-gradient(
     circle,
-    #7e4a36 0%,
+    var(--menu-orb-bronze) 0%,
     rgba(126, 74, 54, 0) 70%
   ); /* Marrón/Cobre */
 }
@@ -76,9 +79,7 @@
   height: 80px;
   background: radial-gradient(
     circle,
-    #0aff56 0%,
+    var(--menu-orb-green) 0%,
     rgba(10, 255, 86, 0) 70%
   ); /* Verde brillante */
 }
-
-/* 4. Estilos para el texto de la cabecera (Header) */
