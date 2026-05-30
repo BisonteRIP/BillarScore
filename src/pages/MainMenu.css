@@ -3,14 +3,13 @@
   width: 100vw;
   height: 100vh;
   /* 1. Color de base muy oscuro, casi negro */
-  background-color: #010803;
+  background-color: var(--menu-page-bg);
   position: relative;
   overflow: hidden;
   font-family: "Montserrat", sans-serif; /* O la fuente que elijas */
-  color: #c4f9da; /* Color de texto base verde muy pálido */
+  color: var(--menu-page-text); /* Color de texto base verde muy pálido */
 }
 
-/* 2. La Rejilla Cybernetic (Grid) */
 .game-layout-container::after {
   content: "";
   position: absolute;
@@ -19,17 +18,14 @@
   width: 100%;
   height: 100%;
 
-  /* Usamos gradientes lineales muy finos para crear las líneas horizontales y verticales */
   background-image:
-    linear-gradient(#051a0b 1px, transparent 1px),
-    linear-gradient(90deg, #051a0b 1px, transparent 1px);
+    linear-gradient(var(--menu-grid-lines) 1px, transparent 1px),
+    linear-gradient(90deg, var(--menu-grid-lines) 1px, transparent 1px);
 
-  /* Definimos el tamaño de cada cuadrado de la rejilla (25px por 25px) */
   background-size: 50px 50px;
 
-  /* Bajamos la opacidad para que sea sutil */
   opacity: 0.6;
-  z-index: 1; /* Detrás del texto pero delante del color base */
+  z-index: 1; 
 }
 
 /* 3. Las Luces Difusas (Orbes) */
@@ -39,16 +35,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2; /* Justo debajo del texto */
-  pointer-events: none; /* No interfieren con los clics */
+  z-index: 2; 
+  pointer-events: none;
 }
 
 /* Base para cada orbe usando gradientes radiales */
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(10px); /* Un desenfoque para dar efecto de luz difusa */
-  opacity: 0.2; /* Muy sutiles */
+  filter: blur(10px); 
+  opacity: 0.2; 
 }
 
 /* Definimos la posición y color de cada orbe según la imagen */
@@ -59,7 +55,7 @@
   height: 120px;
   background: radial-gradient(
     circle,
-    #e9b33e 0%,
+    var(--menu-orb-gold) 0%,
     rgba(233, 179, 62, 0) 70%
   ); /* Naranja */
 }
@@ -71,7 +67,7 @@
   height: 150px;
   background: radial-gradient(
     circle,
-    #7e4a36 0%,
+    var(--menu-orb-bronze) 0%,
     rgba(126, 74, 54, 0) 70%
   ); /* Marrón/Cobre */
 }
@@ -83,9 +79,7 @@
   height: 80px;
   background: radial-gradient(
     circle,
-    #0aff56 0%,
+    var(--menu-orb-green) 0%,
     rgba(10, 255, 86, 0) 70%
   ); /* Verde brillante */
 }
-
-/* 4. Estilos para el texto de la cabecera (Header) */
